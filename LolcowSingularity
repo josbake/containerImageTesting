@@ -11,7 +11,8 @@ From: ubuntu:16.04
 
 
 %environment
-
+    export SINGULARITY_HTTP_PROXY="http://wwwproxy.sandia.gov:80/"
+    export SINGULARITY_HTTPS_PROXY="https://wwwproxy.sandia.gov:80/"
     export LC_ALL=C
 
     export PATH=/usr/games:$PATH
