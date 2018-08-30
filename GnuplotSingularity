@@ -1,0 +1,15 @@
+BootStrap: debootstrap
+OSVersion: trusty
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%post
+export http_proxy="http://wwwproxy.sandia.gov:80/"
+export https_proxy="https://wwwproxy.sandia.gov:80/"
+export ftp_proxy="ftp://wwwproxy.sandia.gov:80/"
+sed -i 's/$/ universe/' /etc/apt/sources.list
+apt-get -y update
+apt-get -y install gnuplot
+
+%runscript
+
+%environment
